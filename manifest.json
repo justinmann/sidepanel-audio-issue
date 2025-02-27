@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Audio Issue",
+  "version": "1.0",
+  "description": "Shows how to display the same side panel on every site using the Side Panel API.",
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "permissions": ["sidePanel", "scripting"],
+  "web_accessible_resources": [
+    {
+      "resources": ["requestPermissions.html", "requestPermissions.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
