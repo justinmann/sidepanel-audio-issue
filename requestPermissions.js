@@ -4,8 +4,13 @@
  */
 async function getUserPermission() {
   console.log("Getting user permission for microphone access...");
-  // Using navigator.mediaDevices.getUserMedia to request microphone access
   await navigator.mediaDevices.getUserMedia({ audio: true });
+  const micPermission = await navigator.permissions.query({
+    name: "microphone",
+  });
+  if (micPermission.state == "granted") {
+    window.close();
+  }
 }
 
 // Call the function to request microphone permission
